@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@include mat.core();
+$bwsimiyu-primary: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$bwsimiyu-accent: mat.define-palette(mat.$gray-palette);
+$bwsimiyu-warn: mat.define-palette(mat.$red-palette);
+$bwsimiyu-theme: mat.define-light-theme((
+  color: (
+    primary: $bwsimiyu-primary,
+    accent: $bwsimiyu-accent,
+    warn: $bwsimiyu-warn,
+  )
+));
+@include mat.all-component-themes($bwsimiyu-theme);
+html, body {
+  margin: 0 !important; padding: 0 !important;
+  background-color: rgb(0, 0, 0) !important; color: whitesmoke !important;
+}
