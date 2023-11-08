@@ -2,28 +2,53 @@
   <div class="wrapper d-flex flex-column justify-content-center align-items-center">
     <div class="profile-wrapper d-flex flex-row justify-content-center align-items-center">
       <img src="../assets/bwsimiyu.jpg" class="image" />
-      <div class="divider"></div>
       <div class="intro">
-        <h5>Brian Simiyu</h5>
+        <h5>Brian Simiyu,</h5>
         <h3>A Full Stack Software Developer.</h3>
         <p class="links">
           <a href="mailto:briansimiyu@icloud.com">
-            <button mat-mini-fab matTooltip="Send an Email" style="color: rgb(0, 255, 255)">
-              <mat-icon>mail</mat-icon>
+            <button mat-mini-fab matTooltip="Send an Email">
+              <mat-icon svgIcon="">mail</mat-icon>
             </button>
           </a>
           <a href="tel:+254701085174">
-            <button mat-mini-fab matTooltip="Call" style="color: rgb(220, 20, 60);">
+            <button mat-mini-fab matTooltip="Call">
               <mat-icon>phone</mat-icon>
             </button>
           </a>
+          <button mat-mini-fab matTooltip="LinkedIn" (click)="navigateToUrl('https://linkedin.com/in/')">
+            <mat-icon svgIcon="linkedin"></mat-icon>
+          </button>
+          <button mat-mini-fab matTooltip="Github" (click)="navigateToUrl('https://github.com/')">
+            <mat-icon svgIcon="github"></mat-icon>
+          </button>
+          <button mat-mini-fab matTooltip="X" (click)="navigateToUrl('https://twitter.com/')">
+            <mat-icon svgIcon="X"></mat-icon>
+          </button>
         </p>
       </div>
     </div>
     <div class="summary">
       <p>
-        Hi, I'm a developer based in Nairobi, Kenya.<br>
+        Hi, I'm a full-stack developer based in Nairobi, Kenya.<br>
         I build Scallable Apps for the Web and Mobile platforms.
+        Check out the different programming languages and technologies I use,
+        my projects and collaborations below.
       </p>
     </div>
+    <mat-card class="projects-wrapper">
+      <mat-tab-group backgroundColor="accent" color="warn">
+        <mat-tab label="Languages & Frameworks">
+          <div class="fabs">
+            <button mat-fab extended color="accent" *ngFor="let item of languagesAndFrameworks">
+              <mat-icon [svgIcon]="item.icon">favorite</mat-icon>
+              {{ item?.name }}
+            </button>
+          </div>
+        </mat-tab>
+        <mat-tab label="Technologies"></mat-tab>
+        <mat-tab label="Projects"></mat-tab>
+      </mat-tab-group>
+    </mat-card>
   </div>
+</div>
