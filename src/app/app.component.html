@@ -46,7 +46,14 @@
             </button>
           </div>
         </mat-tab>
-        <mat-tab label="Technologies"></mat-tab>
+        <mat-tab label="Technologies">
+          <div class="fabs">
+            <button mat-fab extended color="accent" *ngFor="let item of technologies">
+              <mat-icon [svgIcon]="item.icon">favorite</mat-icon>
+              {{ item?.name }}
+            </button>
+          </div>
+        </mat-tab>
         <mat-tab label="Projects"></mat-tab>
       </mat-tab-group>
     </mat-card>

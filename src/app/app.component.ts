@@ -14,11 +14,27 @@ export class AppComponent {
     { name: 'TypeScript', icon: 'ts' },
     { name: 'Angular', icon: 'angular' },
     { name: 'React', icon: 'react' },
+    { name: 'NodeJS', icon: 'node' },
     { name: 'React Native', icon: 'reactN' },
+    { name: 'MEAN & MERN stacks', icon: 'mean' },
     { name: 'Java', icon: 'java' },
     { name: 'SpringBoot', icon: 'sb' },
-    { name: 'Markup & Styling Languages', icon: 'html' }
-  ]
+    { name: 'Python', icon: 'python' },
+    { name: 'Markup & Styling Languages', icon: 'html' },
+    { name: 'Firebase', icon: 'firebase' },
+    { name: 'Flutter', icon: 'flutter' },
+    { name: 'Tensorflow', icon: 'tensorflow' }
+  ];
+  technologies: { name: string, icon:string } [] = [
+    { name: 'Git', icon: 'git' },
+    { name: 'Docker', icon: 'docker' },
+    { name: 'DevOps', icon: 'devops' },
+    { name: 'CI/CD', icon: 'cicd' },
+    { name: 'Jira', icon: 'jira' },
+    { name: 'Agile Methodologies', icon: 'agile' },
+    { name: 'APIs', icon: 'apis' },
+    { name: 'Material Design', icon: 'material' },
+  ];
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitzer: DomSanitizer,
@@ -39,38 +55,18 @@ export class AppComponent {
       'linkedin',
       this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/linkedin.svg')
     );
-    this.matIconRegistry.addSvgIcon(
-      'js',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/js.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'ts',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/ts.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'angular',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/angular.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'react',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/react.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'reactN',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/reactN.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'java',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/java.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'sb',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/sb.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'html',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/html.svg')
-    );
+    this.languagesAndFrameworks.map(item => {
+      this.matIconRegistry.addSvgIcon(
+        item.icon,
+        this.domSanitzer.bypassSecurityTrustResourceUrl(`assets/icons/${item.icon}.svg`)
+      )
+    });
+    this.technologies.map(item => {
+      this.matIconRegistry.addSvgIcon(
+        item.icon,
+        this.domSanitzer.bypassSecurityTrustResourceUrl(`assets/icons/${item.icon}.svg`)
+      )
+    });
   }
 
   navigateToUrl(url: string): void {
