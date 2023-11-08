@@ -2,7 +2,7 @@
     min-height: 100vh;
 
         .profile-wrapper {
-            padding: 0 4%;
+            padding: 1% 4%; padding-top: 4%;
             .image {
                 width: 196px;
                 height: 196px;
@@ -51,7 +51,7 @@
         }
 
         .summary {
-            margin: 2%;
+            margin: 1%;
             padding: 0 12%;
             p {
                 font-size: 1.2em;
