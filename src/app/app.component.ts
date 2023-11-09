@@ -35,6 +35,12 @@ export class AppComponent {
     { name: 'APIs', icon: 'apis' },
     { name: 'Material Design', icon: 'material' },
   ];
+  projects: { name: string, url: string, icon:string, date: string }[] = [
+    { name: 'Waterfront Mall Web App', url: 'https://thewaterfrontkaren.com/', icon: 'web', date: 'Feb, 2019' },
+    { name: 'Wasoko Web App', url: 'https://wasoko.com/', icon: 'web', date: 'June, 2022' },
+    { name: 'Touch Inspiration Web App', url: 'https://touchinspiration.com/', icon: 'web', date: 'Dec, 2019' },
+    { name: 'VituMob Shipping App', url: 'https://ship.vitumob.com/', icon: 'web', date: 'May, 2020' },
+  ];
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitzer: DomSanitizer,
