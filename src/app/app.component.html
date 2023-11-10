@@ -41,7 +41,7 @@
         <mat-tab label="Languages & Frameworks">
           <div class="fabs">
             <button mat-fab extended color="accent" *ngFor="let item of languagesAndFrameworks">
-              <mat-icon [svgIcon]="item.icon">favorite</mat-icon>
+              <mat-icon [svgIcon]="item.icon"></mat-icon>
               {{ item?.name }}
             </button>
           </div>
@@ -49,7 +49,7 @@
         <mat-tab label="Technologies">
           <div class="fabs">
             <button mat-fab extended color="accent" *ngFor="let item of technologies">
-              <mat-icon [svgIcon]="item.icon">favorite</mat-icon>
+              <mat-icon [svgIcon]="item.icon"></mat-icon>
               {{ item?.name }}
             </button>
           </div>

@@ -41,6 +41,7 @@ export class AppComponent {
     { name: 'Touch Inspiration Web App', url: 'https://touchinspiration.com/', icon: 'web', date: 'Dec, 2019' },
     { name: 'VituMob Shipping App', url: 'https://ship.vitumob.com/', icon: 'web', date: 'May, 2020' },
   ];
+  socialIcons: string[] = ['github', 'linkedin', 'X'];
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitzer: DomSanitizer,
@@ -49,18 +50,12 @@ export class AppComponent {
   }
 
   registerIcons(): void {
-    this.matIconRegistry.addSvgIcon(
-      'github',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/github.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'X',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/X.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'linkedin',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('assets/icons/linkedin.svg')
-    );
+    this.socialIcons.map(item => {
+      this.matIconRegistry.addSvgIcon(
+        item,
+        this.domSanitzer.bypassSecurityTrustResourceUrl(`assets/icons/${item}.svg`)
+      );      
+    });
     this.languagesAndFrameworks.map(item => {
       this.matIconRegistry.addSvgIcon(
         item.icon,
